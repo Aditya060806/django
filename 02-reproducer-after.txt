@@ -1,0 +1,16 @@
+# Ticket #17522 -- AFTER fix: admin methods with admin_order_field are now accepted in `ordering`.
+# HEAD = c3744a61a710fee859174d12ae098585de12be6e (fix branch: ticket_17522_admin_ordering_admin_order_field)
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> git rev-parse HEAD
+c3744a61a710fee859174d12ae098585de12be6e
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> git log -1 --pretty=%s
+Fixed #17522 -- Allowed admin methods with admin_order_field in ModelAdmin.ordering.
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> .\.venv\Scripts\python.exe C:\Users\Aditya\AppData\Local\Temp\reproduce_17522.py
+OK: ModelAdmin.check() accepted ordering=('sorted_name',)
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> $LASTEXITCODE
+0
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django>

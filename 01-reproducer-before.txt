@@ -1,0 +1,16 @@
+# Ticket #17522 -- BEFORE fix: Django's ModelAdmin system check rejects admin methods in `ordering`.
+# HEAD = f0e7bd90884b5da0a7418f3c78d1fd309c905014 (base, pre-fix)
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> git rev-parse HEAD
+f0e7bd90884b5da0a7418f3c78d1fd309c905014
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> .\.venv\Scripts\python.exe C:\Users\Aditya\AppData\Local\Temp\reproduce_17522.py
+Traceback (most recent call last):
+  File "C:\Users\Aditya Pandey\AppData\Local\Temp\reproduce_17522.py", line 48, in <module>
+    raise AssertionError(
+AssertionError: admin.E033 regression -- ordering rejects admin method with admin_order_field: [<Error: level=40, msg="The value of 'ordering[0]' refers to 'sorted_name', which is not a field of 'demo17522.Song'.", hint=None, obj=<class '__main__.SongAdmin'>, id='admin.E033'>]
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django> $LASTEXITCODE
+1
+
+PS d:\Endeavors\Coding\Projects\OpenSource\django>
